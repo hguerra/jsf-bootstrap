@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/template/layout.xhtml">
+
+    <ui:define name="page-header">
+        <h1 class="page-header ">Candlestick</h1>
+    </ui:define>
+    <ui:define name="menu">
+        <br/>
+        <div id="argentum">
+            <h:form>
+                <h:panelGrid columns="5">
+                    <h:outputLabel value="Media Móvel:"/>
+                    <p:selectOneButton value="#{argentumBean.nomeMedia}">
+                        <f:selectItem itemLabel="Simples" itemValue="MediaMovelSimples"/>
+                        <f:selectItem itemLabel="Ponderada" itemValue="MediaMovelPonderada"/>
+                    </p:selectOneButton>
+                    <h:outputLabel value="Indicador base:"/>
+                    <p:selectOneButton value="#{argentumBean.nomeIndicadorBase}">
+                        <f:selectItem itemLabel="Abertura" itemValue="IndicadorAbertura"/>
+                        <f:selectItem itemLabel="Fechamento" itemValue="IndicadorFechamento"/>
+                    </p:selectOneButton>
+
+                    <p:commandButton value="Gerar Gráfico" update=":grafico" action="#{argentumBean.gerarGrafico}"/>
+
+                </h:panelGrid>
+            </h:form>
+
+            <p:chart id="grafico" type="line" model="#{argentumBean.modeloGrafico}"/>
+
+            <h:form id="listaNegociacao">
+                <p:dataTable var="negociacao" value="#{argentumBean.negociacoes}" paginator="true" rows="15">
+                    <p:column sortBy="#{negociacao.preco}" headerText="Preço">
+                        <h:outputText value="#{negociacao.preco}"/>
+                    </p:column>
+                    <p:column sortBy="#{negociacao.quantidade}" headerText="Quantidade">
+                        <h:outputText value="#{negociacao.quantidade}"/>
+                    </p:column>
+                    <p:column sortBy="#{negociacao.volume}" headerText="Volume">
+                        <h:outputText value="#{negociacao.volume}"/>
+                    </p:column>
+                    <p:column sortBy="#{negociacao.data}" headerText="Data">
+                        <h:outputText value="#{negociacao.data.time}">
+                            <f:convertDateTime pattern="dd/MM/yyyy"/>
+                        </h:outputText>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+
+        </div>
+    </ui:define>
+</ui:composition>

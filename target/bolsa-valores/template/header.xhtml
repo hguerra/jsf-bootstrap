@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+    <!--content-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+                    <div class="navbar-header">
+
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span
+                                class="icon-bar"></span><span class="icon-bar"></span>
+                        </button>
+                        <h:form>
+                            <h:commandLink styleClass="navbar-brand" action="#{redirectBean.index}">Home</h:commandLink>
+                        </h:form>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="active">
+                                <h:form>
+                                    <h:commandLink styleClass="navbar-brand"
+                                                   action="#{redirectBean.argentum}">Argentum</h:commandLink>
+                                </h:form>
+                            </li>
+                            <li>
+                                <h:form>
+                                    <h:commandLink styleClass="navbar-brand"
+                                                   action="#{redirectBean.cadastrar}">Cadastrar</h:commandLink>
+                                </h:form>
+                            </li>
+                        </ul>
+                        <h:form styleClass="navbar-form navbar-left">
+                            <div class="form-group">
+                                <h:inputText styleClass="form-control" value="#{redirectBean.parametro}"/>
+
+                                <h:commandButton style="margin-left: 15px" styleClass="btn btn-default"
+                                                 action="#{redirectBean.buscar}"></h:commandButton>
+                            </div>
+
+                        </h:form>
+                    </div>
+
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--/content-->
+</ui:composition>

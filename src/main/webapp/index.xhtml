@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/template/layout.xhtml">
+    <ui:define name="page-header">
+        <h1 class="page-header ">Candlestick</h1>
+        <div class="alert alert-success">
+            <strong>Bem Vindo!</strong> <br/><br/>
+            <p> Poucas atividades humanas exercem tanto fascínio quanto o mercado de ações, assunto abordado exaustivamente em lmes, livros e em toda a cultura contemporânea. Somente em novembro de 2007, o total
+                movimentado pela BOVESPA foi de R$ 128,7 bilhões. Destes, o volume movimentado por aplicações home
+                broker foi de R$ 22,2 bilhões.</p>
+        </div>
+        <div class="alert alert-info">
+            <p>Um candlestick indica 4 valores: o maior preço do dia, o menor preço do dia (as pontas), o primeiro preço
+                do dia e o último preço do dia (conhecidos como abertura e fechamento, respectivamente).
+                Os preços de abertura e fechamento são as linhas horizontais e dependem do tipo de candle: se for de alta, o
+                preço de abertura é embaixo; se for de baixa, é em cima. Um candle de alta costuma ter cor azul ou branca
+                e os de baixa costumam ser vermelhos ou pretos. Caso o preço não tenha se movimentado, o candle tem a
+                mesma cor que a do dia anterior.
+                Para calcular as informações necessárias para a construção de um Candlestick, são necessários os dados de
+                todos as negociações (trades) de um dia. Uma Negociação possui três informações: o preço pelo qual foi
+                comprado, a quantidade de ativos e a data em que ele foi executado.</p>
+        </div>
+    </ui:define>
+</ui:composition>
