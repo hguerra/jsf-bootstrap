@@ -1,0 +1,56 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/template/layout.xhtml">
+    <ui:define name="page-header">
+        <h1 class="page-header ">Cadastrar</h1>
+    </ui:define>
+    <ui:define name="menu">
+        <!--content-->
+        <div id="formCadastro" class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <h:form id="formCadastrar">
+                        <!--data-->
+                        <div class="input-group">
+                            <p:outputLabel for="date" value="Data: "/><br/>
+                            <p:calendar id="date" value="#{cadastrar.data}" showOn="button" required="true"/>
+                            <p:message for="date"/>
+                        </div>
+
+                        <!--preco-->
+                        <div class="col-xs-4 input-group">
+                            <p:outputLabel for="preco" value="Preço: "/><br/>
+                            <p:inputText id="preco" styleClass="form-control" type="number"
+                                         value="#{cadastrar.preco}" required="true"/>
+                            <p:message for="preco"/>
+
+                        </div>
+                        <!--quantidade-->
+                        <div class="col-xs-4 input-group">
+                            <p:outputLabel for="quantidade" value="Quantidade: "/><br/>
+                            <p:inputText id="quantidade" type="number" styleClass="form-control"
+                                         value="#{cadastrar.quantidade}" required="true"/>
+                            <p:message for="quantidade"/>
+                        </div>
+                        <br/>
+                        <p:commandButton value="Cadastrar" update="formCadastrar"
+                                         styleClass="btn btn-default"
+                                         action="#{cadastrar.addNegociacao}" icon="ui-icon-check"/>
+
+                    </h:form>
+                    <br/>
+                    <div class="alert alert-success">
+                        <strong>Visualizar Negociacoes!</strong> <br/><br/>
+                        <h:form>
+                            <p:commandButton value="Negociacoes" styleClass="btn btn-default" action="#{cadastrar.visualizarNegociacoes}" icon="icon-right-hand"/>
+                        </h:form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/content-->
+    </ui:define>
+
+</ui:composition>

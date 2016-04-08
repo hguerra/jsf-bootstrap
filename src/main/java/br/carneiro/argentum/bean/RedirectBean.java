@@ -1,12 +1,15 @@
 package br.carneiro.argentum.bean;
 
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import java.io.Serializable;
 
 /**
  * Created by heitor on 05/04/16.
  */
 @ManagedBean
-public class RedirectBean
+@SessionScoped
+public class RedirectBean implements Serializable
 {
     private final static String REDIRECT = "?faces-redirect=true";
     private String parametro;
@@ -37,13 +40,14 @@ public class RedirectBean
 
     public String cadastrar()
     {
-        return redirectTo("cadastro");
+        return redirectTo("cadastrar");
     }
 
-    public String analisar()
+    public String negociacao()
     {
         return redirectTo("negociacao");
     }
+
 
     public String argentum()
     {

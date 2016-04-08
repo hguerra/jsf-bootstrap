@@ -1,8 +1,38 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:p="http://primefaces.org/ui"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui" template="/template/layout.xhtml">
+    <ui:define name="page-header">
+        <h1 class="page-header ">Negociações</h1>
+    </ui:define>
+    <ui:define name="menu">
+        <!--content-->
+        <div id="formCadastro" class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <h:form id="listaNegociacao">
+                        <p:dataTable var="negociacao" value="#{negociaoBean.negociacoes}" paginator="true" rows="15">
+                            <p:column sortBy="#{negociacao.preco}" headerText="Preço">
+                                <h:outputText value="#{negociacao.preco}"/>
+                            </p:column>
+                            <p:column sortBy="#{negociacao.quantidade}" headerText="Quantidade">
+                                <h:outputText value="#{negociacao.quantidade}"/>
+                            </p:column>
+                            <p:column sortBy="#{negociacao.volume}" headerText="Volume">
+                                <h:outputText value="#{negociacao.volume}"/>
+                            </p:column>
+                            <p:column sortBy="#{negociacao.data}" headerText="Data">
+                                <h:outputText value="#{negociacao.data.time}">
+                                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                </h:outputText>
+                            </p:column>
+                        </p:dataTable>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        <!--/content-->
+    </ui:define>
 
 </ui:composition>
-

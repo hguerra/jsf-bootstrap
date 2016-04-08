@@ -14,7 +14,7 @@ public class LeitorXMLXstream implements  LeitorXML {
     @Override
     public List<Negociacao> carrega(InputStream in) {
         XStream stream = new XStream(new DomDriver());
-        stream.alias("negociacao", Negociacao.class);
+        stream.alias("cadastrar", Negociacao.class);
         return (List<Negociacao>) stream.fromXML(in);
     }
 }

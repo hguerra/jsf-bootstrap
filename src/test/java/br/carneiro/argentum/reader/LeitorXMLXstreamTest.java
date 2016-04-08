@@ -16,11 +16,11 @@ public class LeitorXMLXstreamTest {
     @Test
     public void testCarregaXmlComUmaNegociacaoEmListaUnitaria() throws Exception {
         String xmlDeTeste = "<list>"
-                .concat("<negociacao>")
+                .concat("<cadastrar>")
                 .concat("<preco>43.5</preco>")
                 .concat("<quantidade>1000</quantidade>")
                 .concat("<data><time>1322233344455</time></data>")
-                .concat("</negociacao>")
+                .concat("</cadastrar>")
                 .concat("</list>");
 
         LeitorXML leitorXML = new LeitorXMLXstream();

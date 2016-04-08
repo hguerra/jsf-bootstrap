@@ -1,9 +1,6 @@
 package br.carneiro.argentum.bean;
 
-import br.carneiro.argentum.modelo.Candle;
-import br.carneiro.argentum.modelo.CandleFactory;
-import br.carneiro.argentum.modelo.Negociacao;
-import br.carneiro.argentum.modelo.SerieTemporal;
+import br.carneiro.argentum.modelo.*;
 import br.carneiro.argentum.ws.ClienteWebServiceMock;
 import org.primefaces.model.chart.ChartModel;
 

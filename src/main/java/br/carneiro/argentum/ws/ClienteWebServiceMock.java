@@ -54,7 +54,7 @@ public class ClienteWebServiceMock implements ClienteWebService
             data.add(Calendar.DAY_OF_YEAR, 1);
         }
         XStream stream = new XStream(new DomDriver());
-        stream.alias("negociacao", Negociacao.class);
+        stream.alias("cadastrar", Negociacao.class);
         stream.setMode(XStream.NO_REFERENCES);
         InputStream inputStream = new ByteArrayInputStream(stream.toXML(negociacoes).getBytes());
         return inputStream;

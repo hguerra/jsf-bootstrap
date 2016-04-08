@@ -1,23 +1,35 @@
 package br.carneiro.argentum.bean;
 
+import br.carneiro.argentum.modelo.Negociacao;
+
 import javax.faces.bean.ManagedBean;
-import java.text.SimpleDateFormat;
+import javax.faces.bean.SessionScoped;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by heitor on 05/04/16.
  */
 @ManagedBean
-public class NegociaoBean
+@SessionScoped
+public class NegociaoBean implements Serializable
 {
     private double preco;
     private int quantidade;
     private Date data;
+    private List<Negociacao> negociacoes;
 
-    public void printData()
+    public NegociaoBean()
     {
-        String data = new SimpleDateFormat("dd/MM/yyyy").format(getData());
-        System.out.println(data);
+        this.negociacoes = new ArrayList<>();
+
+    }
+
+    public void addNegociacao(Negociacao negociacao)
+    {
+        this.negociacoes.add(negociacao);
     }
 
     /**
@@ -53,5 +65,15 @@ public class NegociaoBean
     public void setData(Date data)
     {
         this.data = data;
+    }
+
+    public List<Negociacao> getNegociacoes()
+    {
+        return negociacoes;
+    }
+
+    public void setNegociacoes(List<Negociacao> negociacoes)
+    {
+        this.negociacoes = negociacoes;
     }
 }

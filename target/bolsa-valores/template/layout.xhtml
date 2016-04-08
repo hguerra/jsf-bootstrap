@@ -26,11 +26,11 @@
     <h:outputScript target="head">
         $ = jQuery.noConflict();
         $(document).ready(function() {
-            var heightWindow = $a(window).height();
+            var heightWindow = $(window).height();
             var heightBody = document.body.clientHeight;
             if (heightWindow > heightBody) {
-                $a("#footer").css('position', 'fixed');
-                $a("#footer").css('bottom', '0');
+                $("#footer").css('position', 'fixed');
+                $("#footer").css('bottom', '0');
             }
         });
     </h:outputScript>
